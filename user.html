@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Profili</title>
+    <link rel="stylesheet" href="https: //fonts.googleapis.com/css2?family= Poppins :wght@100 & display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="anasayfa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+       const kullanıcıJSON = localStorage.getItem('kullanici');
+       var kullanıcıbilgileri = kullanıcıJSON ? JSON.parse(kullanıcıJSON) : [];
+       
+       var getFullName = false;
+       for (var i = 0; i < kullanıcıbilgileri.length; i++){
+         if (kullanıcıbilgileri[i].fullName){
+           var fullName = kullanıcıbilgileri[i].fullName;
+           var uname = kullanıcıbilgileri[i].username;
+           var email = kullanıcıbilgileri[i].email;
+           getFullName = true;
+           break;
+         }
+       }
+ 
+       if (getFullName) {
+         var usernameElement = document.getElementById('username');
+         var usernameInfo = document.getElementById('usernameInfo');
+         var userEmail = document.getElementById('userEmail');
+         if (usernameElement) {
+           usernameElement.innerText = fullName;
+           usernameInfo.innerHTML = uname;
+           userEmail.innerHTML = email;
+         } else {
+           console.error("username elementi bulunamadı.");
+         }
+       }
+     });
+       </script>
+
+
+    <div class="fixed">
+        <nav class="navbar">
+            <h2>Vera Sigorta</h2>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Arama Yap..." aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ARA</button>
+            </form>
+            <div class="col-md-4 text-right">
+                <a href="" class="text-white">
+                    <i class="fa-solid fa-user"></i>
+                    <p id="username"></p>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+
+    <section class="vh-100" style="background-color: #f4f5f7;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-lg-6 mb-4 mb-lg-0">
+                    <div class="card mb-3" style="border-radius: .5rem;">
+                        <div class="row g-0">
+                            <div class="col-md-4 gradient-custom text-center text-black"
+                                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                                <img src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"
+                                    alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                                <h5></h5>
+                                <p id="usernameInfo"></p>
+                                <i class="far fa-edit mb-5"></i>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4">
+                                    <h6>BİLGİLERİ</h6>
+                                    <hr class="mt-0 mb-4">
+                                    <div class="row pt-1">
+                                        <div class="col-6 mb-3">
+                                            <h6>Email</h6>
+                                            <p class="text-muted" id="userEmail"></p> <i class="far fa-edit mb-5"></i>
+                                        </div>
+                                        <div class="col-6 mb-3"> 
+                                            <h6>Telefon</h6>
+                                            <p class="text-muted">123 456 789 00</p> <i class="far fa-edit mb-5"></i>
+                                        </div>
+                                    </div>
+                                    <hr class="mt-0 mb-4">
+                                            <h6>Poliçe Bilgileri</h6>
+                                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                elit. Reprehenderit ut iure quos exercitationem labore pariatur
+                                                repellendus dolore incidunt quasi consequuntur!
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

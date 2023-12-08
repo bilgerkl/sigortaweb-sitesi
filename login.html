@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Giriş Sayfası</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h2 style="color: white;">Giriş Yap</h2><!--Başlık oluşturur-->
+  <form id="loginForm"> <!-- Bu form, kullanıcıların giriş yapması için kullanılır.-->
+    <input type="email" id="email" placeholder="E-Posta Adresi" required>
+<!-- (yukarıdaki satır içim) kullanıcı adı için yazılmış bir inputtur. 
+        //inputun kriterleri açıklar. mesela bu inputta sadece harf girişi yapılmaktadır. minimum 5, maksimum 15 karakter yazılmaktadır -->
+    <input type="password" id="loginPassword" name="numericPassword" oninput="this.value = this.value.replace(/[^0-9]/g, '');" minlength="8" maxlength="15" placeholder="Şifrenizi Giriniz" required>
+<!-- (yukarıdaki satır içim) kullanıcı adı için yazılmış bir inputtur. 
+        //inputun kriterleri açıklar. mesela bu inputta sadece harf girişi yapılmaktadır. minimum 5, maksimum 15 karakter yazılmaktadır -->
+   
+<button type="submit">Giriş Yap</button><!--Bu satır, giriş formunun gönder düğmesini oluşturur. Kullanıcılar bu düğmeye tıkladığında, form verileri sunucuya gönderilir.-->
+
+<label><!--Bu satır, "Beni Hatırla" metnini içeren bir etiketi ve bir onay kutusu ekler. Kullanıcılar bu kutuyu işaretlerse, tarayıcıları onları hatırlayacaktır.-->
+  <input type="checkbox" checked="checked" name="remember"> Beni Hatırla</label>
+
+
+ <a href="forgotpassword.html" ><!--Bu satır, "Şifrenizi mi Unuttunuz ?" metni ile bir şifre sıfırlama sayfasına yönlendiren bir bağlantı oluşturur.-->
+ <p class="text-center">Şifrenizi mi Unuttunuz ? </a>
+ 
+  <p class="text-center">Hesabın Yok Mu ?
+
+    <a href="register.html" style="text-decoration: none;"> 
+         <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+      Üye Ol<!--Bu satır, "Hesabın Yok Mu ?" metni ile bir üyelik oluşturma sayfasına yönlendiren bir bağlantı oluşturur.-->
+       </button>
+      </a>
+  </form>
+  <script src="login.js"></script>
+</body>
+</html>

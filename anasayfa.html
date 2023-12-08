@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+    <link rel="stylesheet" href="https: //fonts.googleapis.com/css2?family= Poppins :wght@100 & display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="anasayfa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <script>
+       document.addEventListener("DOMContentLoaded", function() {
+      const kullanıcıJSON = localStorage.getItem('kullanici');
+      var kullanıcıbilgileri = kullanıcıJSON ? JSON.parse(kullanıcıJSON) : [];
+      
+      var getFullName = false;
+      for (var i = 0; i < kullanıcıbilgileri.length; i++){
+        if (kullanıcıbilgileri[i].fullName){
+          var fullName = kullanıcıbilgileri[i].fullName;
+          getFullName = true;
+          break;
+        }
+      }
+
+      if (getFullName) {
+        var usernameElement = document.getElementById('username');
+        if (usernameElement) {
+          usernameElement.innerText = fullName;
+        } else {
+          console.error("username elementi bulunamadı.");
+        }
+      }
+    });
+      </script>
+
+    <div class="fixed">
+        <nav class="navbar">
+            <h2>Vera Sigorta</h2>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Arama Yap..." aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ARA</button>
+            </form>
+            <div class="col-md-4 text-center">
+                <a href="user.html" class="text-white">
+                    <i class="fa-solid fa-user"></i>
+                    <p id="username"></p>
+                </a>
+            </div>
+        </nav>
+    </div>
+    <nav data-mdb-navbar-init class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="anasayfa.html">Ana Sayfa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="kasko.html">Kasko Sigortası</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="ozelsaglık.html">Özel Sağlık Sigortası</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="konut.html">Konut Sigortası</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <br><br>
+                <div class="card-body">
+                    <div class="accordion" id="accordionExample">
+
+                        <!-- A Bloğu -->
+                        <div class="card">
+                            <div class="card-header" id="headingA">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapseA" aria-expanded="true" aria-controls="collapseA">
+                                        Sigorta Nedir?
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapseA" class="collapse" aria-labelledby="headingA"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Sigortalar, belirli bir prim karşılığında gelecekte yaşanabilecek olumsuz durumların
+                                    teminat
+                                    altına alındığı bir tür sözleşmedir. Sigorta şirketleri tarafından sağlanan bu
+                                    güvence
+                                    kapsamında, sigorta sahibinin uğrayacağı maddi zararlar karşılanır ve bu sayede
+                                    beklenmedik
+                                    durumların bütçe planlamasını bozmasının önüne geçilir. Poliçe olarak adlandırılan
+                                    ve sigorta
+                                    şirketi ile imzalanan yazılı anlaşmanın kapsamı, şirkete göre farklılık
+                                    gösterebilir. Poliçe
+                                    kapsamında sunulan teminat detayları özenle incelenerek ihtiyaca yönelik en uygun
+                                    seçeneğin
+                                    belirlenmesi ile sigorta yaptıracak kişi ve sigorta şirketi arasında karşılıklı bir
+                                    anlaşma
+                                    sağlanır.
+                                    <br><br>
+                                    “Sigorta nedir?” sorusunu daha teknik şekilde tanımlayacak olursak: Sigorta, aynı
+                                    türden riskle
+                                    karşı karşıya olan kişilerin belirli bir miktar para ödeyerek oluşturdukları prim
+                                    havuzudur. O
+                                    riskin gerçekleşmesi sonucu zarara uğrayanların zararı bu ortak havuzdan karşılanır.
+                                    Parayla
+                                    ölçülebilen her türlü risk sigortalanabilir. Katılımcı ne kadar fazla olursa risk
+                                    daha fazla
+                                    kişi ile paylaşıldığından zarar da doğal olarak azalır. Yani sigorta sistemine dahil
+                                    olan herkes
+                                    aslında birbirinin zararını öder. Böylece kimse tek seferde büyük meblağlar ödemek
+                                    zorunda
+                                    kalmaz. Bu ortak havuzun yönetimini de sigorta şirketleri yapar.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- B Bloğu -->
+                        <div class="card">
+                            <div class="card-header" id="headingB">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseB" aria-expanded="false" aria-controls="collapseB">
+                                        Sigorta Ne İşe Yarar?
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseB" class="collapse" aria-labelledby="headingB"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Sigorta, gerçekleşme ihtimali olan durumlarla karşılaştığında zararının
+                                    giderilmesini sağlar ve
+                                    maddi-manevi karşılaşabileceğin problemlerle ilgili olarak destek olur ve gelecekle
+                                    ilgili de
+                                    maddi kaygıları azaltır. Sigorta sayesinde riski yaşamadan önce poliçe yaptırdığın
+                                    takdirde için
+                                    rahat olur çünkü herhangi bir kayıp yaşamadan kendini güvence altına almış olursun
+                                    ve ani bir
+                                    risk durumunda manevi üzüntünün yanında bir de maddi birikimlerini harcamak
+                                    durumunda kalmazsın.
+                                    Yani zor bir süreci hem maddi hem de manevi olarak yıpranmadan atlatırsın. Bir başka
+                                    deyişle de
+                                    suçsuz olduğun durumlarda başkalarının yol açtığı zararlardan da korunmuş olursun.
+                                    <br><br>
+                                    Örneğin arabana bir sürücünün çarpıp kaçması durumunda kasko sigortan zararın
+                                    karşılayacağı için
+                                    büyük ödemeler yapmak zorunda kalmazsın. Bireysel emeklilik gibi bir sigorta
+                                    poliçesi
+                                    yaptırdığında gelecekte emekli maaşının yanında ek maaş elde eder, maddi açıdan
+                                    rahat bir
+                                    emeklilik dönemi geçirirsin. En değer verdiğin kişiler olan çocukların ve eşine de
+                                    özel sağlık
+                                    sigortası yapabilir, onların sağlıklarını güvence altına alabilirsin.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- C Bloğu -->
+                        <div class="card">
+                            <div class="card-header" id="headingC">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseC" aria-expanded="false" aria-controls="collapseC">
+                                        Sigorta Çeşitleri Nelerdir?
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseC" class="collapse" aria-labelledby="headingC"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Sigortalar; aracını, sağlığını, evini ve hatta cep telefonunu güvence altına alacak
+                                    şekilde
+                                    çeşitlilik gösterir. Bunlar arasında zorunlu olanlar ve isteğe bağlı yaptırılarak
+                                    ekstra
+                                    imkânlardan yararlanma olanağı sunan poliçe çeşitleri bulunur.
+                                </div>
+                            </div>
+                            <!-- D bloğu-->
+                            <div class="card">
+                                <div class="card-header" id="headingD">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse"
+                                            data-target="#collapseD" aria-expanded="true" aria-controls="collapseD">
+                                            Kasko Sigortası
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseD" class="collapse" aria-labelledby="headingD"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <a href="kasko.html" style="font-size: 22px ;">Kasko Sigortası</a> <br>
+                                        araç sahiplerine olumsuz durumlar sonucu kendi araçlarında
+                                        oluşabilecek hasarlar karşısında sunulan ve isteğe bağlı olarak yaptırılabilen
+                                        bir
+                                        ekstra güvencedir. Kasko sigortası olan araçta çarpma, yanma, çalınma veya
+                                        üçüncü
+                                        şahıslar tarafından kasıtlı olarak verilen hasar gibi durumlardan doğan zararlar
+                                        karşılanır. Poliçe sahiplerine, ödemek zorunda kalacakları büyük miktarların
+                                        önüne
+                                        geçmede fayda sağlayan kasko ile ihtiyaç duyulan tüm durumlar gözetilerek
+                                        teminat
+                                        limitleri genişletilebilir.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- E bloğu -->
+                            <div class="card">
+                                <div class="card-header" id="headingE">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse"
+                                            data-target="#collapseE" aria-expanded="true" aria-controls="collapseE">
+                                            Özel Sağlık Sigortası
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseE" class="collapse" aria-labelledby="headingE"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <a href="ozelsaglık.html " style="font-size: 22px ;">Özel Sağlık Sigortası</a> <br>
+                                        kaza veya hastalık nedeniyle doğabilecek sağlık
+                                        giderlerinin karşılandığı ve şartların kişi özelinde belirlendiği bir sağlık
+                                        sigortasıdır.Özel Sağlık Sigortası sayesinde anlaşmalı özel hastanelerden
+                                        alınacak sağlık hizmetleri kapsamında bulunan muayene, tahlil ve tetkikler ile
+                                        cerrahi müdahaleler için ekstra ödemesiz tedavi olanağı sunulur. Teminat altına
+                                        alınan hastalık durumları ile ayakta veya yatarak tedavi sürecinde yapılacak
+                                        sağlık harcamalarının limitleri sigorta şirketi tarafından belirlenir.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- F bloğu -->
+                            <div class="card">
+                                <div class="card-header" id="headingF">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse"
+                                            data-target="#collapseF" aria-expanded="true" aria-controls="collapseF">
+                                            Konut Sigortası
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseF" class="collapse" aria-labelledby="headingF"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <a href="konut.html" style="font-size: 22px ;">Konut Sigortası</a> <br> konut sahiplerinin evlerini yangın, hırsızlık, terör veya kaza
+                                        durumları karşısında koruma altına alan sigorta hizmetidir. Yalnızca ev
+                                        sahiplerini değil, kiracıları da koruyan konut sigortası sayesinde kiracılar,
+                                        konut poliçesi kapsamında eşyalarını olası tehlikelere karşı koruma altına
+                                        alabilirler.
+                                            <br><br>
+                                        Sen de konut sigortası ile evinizde yaşanabilecek can sıkıcı olayların bütçene
+                                        yansımasını önleyebilir hem kendini hem de konutunu güvence altına alabilirsin.
+                                        Evden çıktığında gözünün arkada kalmaması için erkenden sigortam.net üzerinden
+                                        konut sigortası yaptırabilir, risklere karşı evini ve eşyalarını bugünden
+                                        teminat altına almaya başlayabilirsin.
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="iterative-functions">
+                    <div class="text-center">
+                        <h3> Hemen Teklif Al! </h3><br>
+                        <a href="teklifal.html">Teklif Al</a><br>
+                        <a href="sıksorulansorular.html">Sık Sorulan Sorular</a><br>
+                        <a href="#">Hızlı Sigorta İşlemleri</a><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer style="background-color: #343a40; color: white; text-align: center; padding: 20px;">
+    <section style="display: flex; justify-content: center;">
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+    </section>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-12">
+            <h5 class="text-uppercase">Bize Ulaşın</h5>
+            <ul style="list-style: none; padding: 0; text-align: center;">
+                <li style="margin-bottom: 10px;"><a href="hakkımızda.html"
+                        style="color: white; text-decoration: none;">Hakkımızda</a></li>
+                <li style="margin-bottom: 10px;"><a href="hizmetlerimiz.html"
+                        style="color: white; text-decoration: none;">Hizmetlerimiz</a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.2); padding: 10px;">
+        <p>Copyright &copy;2023; Designed by <span style="font-weight: bold;">Vera Sigorta</span> </p>
+    </div>
+</footer>
+
+</html>

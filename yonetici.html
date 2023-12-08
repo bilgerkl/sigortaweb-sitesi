@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+    <link rel="stylesheet" href="https: //fonts.googleapis.com/css2?family= Poppins :wght@100 & display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="anasayfa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const kullanıcıJSON = localStorage.getItem('kullanici');
+            var kullanıcıbilgileri = kullanıcıJSON ? JSON.parse(kullanıcıJSON) : [];
+
+            var getFullName = false;
+            for (var i = 0; i < kullanıcıbilgileri.length; i++) {
+                if (kullanıcıbilgileri[i].fullName) {
+                    var fullName = kullanıcıbilgileri[i].fullName;
+                    getFullName = true;
+                    break;
+                }
+            }
+
+            if (getFullName) {
+                var usernameElement = document.getElementById('username');
+                if (usernameElement) {
+                    usernameElement.innerText = fullName;
+                } else {
+                    console.error("username elementi bulunamadı.");
+                }
+            }
+        });
+
+        function showContent(contentType) {
+            let contentDiv = document.getElementById('content');
+            if (contentType === 'general') {
+                contentDiv.innerHTML = '<h4 class="text-white text-center">Website Settings</h4>';
+            } else if (contentType === 'users') {
+                contentDiv.innerHTML = '<h4 class="text-white text-center">Manage Users</h4><p class="text-white text-center">Users List</p>';
+            } else if (contentType === 'products') {
+                contentDiv.innerHTML = '<h4 class="text-white text-center">Products</h4>';
+            } else if (contentType === 'settings') {
+                contentDiv.innerHTML = '<h4 class="text-white text-center">Settings</h4>';
+            }
+        }
+
+        // Tüm localStorage verilerini alma
+        function getAllUserData() {
+            let userData = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                let key = localStorage.key(i);
+                let value = localStorage.getItem(key);
+                userData.push({ key, value });
+            }
+            return userData;
+        }
+
+        // HTML üzerinde listeleme işlemi
+        function displayUserData() {
+            let userData = getAllUserData();
+            let listContainer = document.getElementById('userDataList');
+
+            // Eğer veri varsa listele
+            if (userData.length > 0) {
+                let listHTML = '<ul>';
+                userData.forEach(data => {
+                    listHTML += `<li><strong>${data.key}:</strong> ${data.value}</li>`;
+                });
+                listHTML += '</ul>';
+                listContainer.innerHTML = listHTML;
+            } else {
+                listContainer.innerHTML = '<p>LocalStorage\'da kayıtlı kullanıcı verisi bulunamadı.</p>';
+            }
+        }
+
+        // Çağrıldığında verileri HTML'e listele
+        window.onload = function () {
+            displayUserData();
+        };
+    </script>
+
+    <div class="fixed">
+        <nav class="navbar">
+            <h2>Vera Sigorta</h2>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Arama Yap..." aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ARA</button>
+            </form>
+            <div class="col-md-4 text-center">
+                <a href="user.html" class="text-white">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <p id="username"></p>
+                </a>
+            </div>
+        </nav>
+    </div>
+    <section>
+        <div class="container-fluid p-4 text-white" style="background-color: rgb(39, 38, 38);">
+            <ol class="breadcrumb" style="background-color: transparent;">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#"></a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+              </ol>
+            <div class="row mt-5">
+                <div class="col-md-2">
+                   <div class="header">
+                    <h3 class="side-nav header">Dashboard</h3>
+                   </div>
+                   <div class="container side-nav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item" style="list-style: circle;">
+                            <a href="#" class="nav-link text-white" onclick="showContent('general')">General</a>
+                        </li>
+                        <li class="nav-item" style="list-style: circle">
+                            <a href="#" class="nav-link text-white" onclick="showContent('users')">Users</a>
+                        </li>
+                        <li class="nav-item" style="list-style: circle;">
+                            <a href="#" class="nav-link text-white" onclick="showContent('products')">Products</a>
+                        </li>
+                        <li class="nav-item" style="list-style: circle;">
+                            <a href="#" class="nav-link text-white" onclick="showContent('settings')">Settings</a>
+                        </li>
+                    </ul>
+                   </div>
+                </div>
+                <div class="col-md-10" id="content">
+                    <!-- İçerik buraya eklenecek -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function showContent(contentType) {
+            let contentDiv = document.getElementById('content');
+            if (contentType === 'general') {
+                contentDiv.innerHTML = '<h4 class="text-white text-center">Website Settings</h4>',
+                 contentDiv.innerHTML = listHTML;
+            } else if (contentType === 'users') {
+                contentDiv.innerHTML = '<h4 class="text-white text-center">Manage Users</h4>',
+                '<p class="text-white text-center> Users List</p> <br><br>';
+            } else if (contentType === 'products') {
+                contentDiv.innerHTML = '<h4 class="text-white text-center">Products</h4>';
+            } else if (contentType === 'settings') {
+                contentDiv.innerHTML = '<h4 class="text-white text-center">Settings</h4>';
+            }
+        }
+    </script>
+
+</body>
+
+<footer style="background-color: #343a40; color: white; text-align: center; padding: 20px;">
+    <section style="display: flex; justify-content: center;">
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+    </section>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-12">
+            <h5 class="text-uppercase">Bize Ulaşın</h5>
+            <ul style="list-style: none; padding: 0; text-align: center;">
+                <li style="margin-bottom: 10px;"><a href="hakkımızda.html"
+                        style="color: white; text-decoration: none;">Hakkımızda</a></li>
+                <li style="margin-bottom: 10px;"><a href="hizmetlerimiz.html"
+                        style="color: white; text-decoration: none;">Hizmetlerimiz</a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.2); padding: 10px;">
+        <p>Copyright &copy;2023; Designed by <span style="font-weight: bold;">Vera Sigorta</span> </p>
+    </div>
+</footer>
+
+</html>

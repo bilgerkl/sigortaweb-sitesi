@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kayıt Sayfası</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+   
+</head>
+<body>
+    <h1 class="custom-header">VERA SİGORTA</h1><!-- 11-12-13. satırlar, başlık etiketleridir.-->
+    <h3 class="custom-subheader">Gelişmiş sigortacılık seçenekleriyle her zaman önceliğiniz...</h3>
+    <h2 style="color: white;">Kayıt Ol</h2>
+    <form id="registerForm">
+        <!--(Form içindeki input alanları) Kullanıcıların kayıt bilgilerini girmeleri için kullanılan metin giriş alanlarını temsil eder. 
+                            Her biri belirli türdeki verileri kabul eden "input" elementleri içerir (örneğin, ad-soyad, kullanıcı adı, e-posta adresi ve parola). 
+                            Ayrıca, her bir giriş alanına girdi sınırlamaları, stil özellikleri ve placeholder metni eklenmiştir.-->
+        <div class="form-group">
+            <input type="text" class="form-control" id="loginUsername" name="textOnlyInput"
+            oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '');" minlength="3" maxlength="10"
+                placeholder="Ad Giriniz" required>
+        </div>
+        
+        <div class="form-group">
+            <input type="text" class="form-control" id="lastname" name="textOnlyInput"
+            oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '');" minlength="3" maxlength="10" placeholder="Soyad Giriniz" required>
+                
+                <br><br>
+        <div class="form-group">
+            <input type="text" id="username" name="textOnlyInput"
+                oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '');" minlength="3" maxlength="10" placeholder="KullanıcıAdı Giriniz">
+                
+        </div>
+        <div class="form-group">
+            <input type="email" id="email" placeholder="E-Posta Adresi" required>
+        </div>
+        <div class="form-group">
+            <input id="password" name="numericPassword" type="password" class="form-control" id="password" oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="Parolanızı Giriniz" minlength="8" maxlength="15" required>
+            </div>                
+        </div>
+        <div class="form-group">
+            <input type="password" id="confirmPassword" name="numericPassword" oninput="this.value = this.value.replace(/[^0-9]/g, '');" minlength="8" maxlength="15" placeholder="Parolanızı Tekrar Giriniz">
+                <br><br>
+        </div>
+        <button type="submit" id="registerButton">Kayıt Ol</button>
+        <!--Kayıt formunu göndermek için kullanılan bir düğmeyi temsil eder. "registerButton" kimliği ile tanımlanmıştır.-->
+
+        <p>Giriş Yapmak İçin<a href="login.html">Tıklayın...</a></p>
+        <!-- "Giriş Yap" bağlantısını içerir ve bu bağlantıya tıklanarak giriş sayfasına yönlendirme yapar.-->
+
+        <!-- Google ve Twitter ikonları -->
+        <div class="social-icons"><!--Google ve Twitter ile kayıt olma seçeneklerini temsil eden sosyal medya ikonlarını içerir. 
+            Bu ikonlara tıklanarak ilgili sosyal medya platformları üzerinden kayıt olma işlemi yapılabilir.-->
+            <a href="#" class="google-icon"><img src="google-icon.png" alt="Google ile giriş"></a>
+            <a href="#" class="twitter-icon"><img src="twitter-icon.png" alt="Twitter ile giriş"></a>
+        </div>
+    </form>
+    <!-- Pop-up -->
+    <div id="popup" class="popup"><!--Başarılı bir kayıt işlemi sonrasında görüntülenen pop-up penceresini temsil eder. 
+        Bu pencere, kayıt işleminin başarıyla tamamlandığını belirten bir mesaj içerir.-->
+        <div class="popup-content">
+            <span class="close" id="close">&times;</span>
+            <p>Kayıt işleminiz başarıyla gerçekleşmiştir.</p>
+        </div>
+    </div>
+    <div class="space"></div> <!-- Formun bittiği yere göre boşluk eklendi -->
+    <script src="register.js"></script>
+</body>
+
+</html>

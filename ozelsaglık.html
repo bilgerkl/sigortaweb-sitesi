@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+    <link rel="stylesheet" href="https: //fonts.googleapis.com/css2?family= Poppins :wght@100 & display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="anasayfa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const kullanıcıJSON = localStorage.getItem('kullanici');
+            var kullanıcıbilgileri = kullanıcıJSON ? JSON.parse(kullanıcıJSON) : [];
+
+            var getFullName = false;
+            for (var i = 0; i < kullanıcıbilgileri.length; i++) {
+                if (kullanıcıbilgileri[i].fullName) {
+                    var fullName = kullanıcıbilgileri[i].fullName;
+                    getFullName = true;
+                    break;
+                }
+            }
+
+            if (getFullName) {
+                var usernameElement = document.getElementById('username');
+                if (usernameElement) {
+                    usernameElement.innerText = fullName;
+                } else {
+                    console.error("username elementi bulunamadı.");
+                }
+            }
+        });
+    </script>
+
+    <div class="fixed">
+        <nav class="navbar">
+            <h2>Vera Sigorta</h2>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Arama Yap..." aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ARA</button>
+            </form>
+            <div class="col-md-4 text-center">
+                <a href="user.html" class="text-white">
+                    <i class="fa-solid fa-user"></i>
+                    <p id="username"></p>
+                </a>
+            </div>
+        </nav>
+    </div>
+    <nav data-mdb-navbar-init class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="anasayfa.html">Ana Sayfa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="kasko.html">Kasko Sigortası</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="ozelsaglık.html">Özel Sağlık Sigortası</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="konut.html">Konut Sigortası</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <br>
+    <div class="card" style="width: 50rem;">
+        <img src="https://iasbh.tmgrup.com.tr/27a7da/650/344/0/0/752/395?u=https://isbh.tmgrup.com.tr/sbh/2021/04/07/dunya-saglik-gunu-nedir-7-nisan-dunya-saglik-gunu-neden-kutlaniyor-onemi-ne-1617785304643.jpg"
+            class="card-img-top" alt="Chicago Skyscrapers" />
+        <div class="card-body">
+            <h5 class="card-title text-center"> Özel Sağlık Sigortası</h5>
+            <p class="card-text">
+
+                <strong>Kapsamı:</strong>
+
+                <strong>Hastane Tedavileri: </strong> <br>Özel sağlık sigortası, hastanede yatış, cerrahi müdahaleler, ameliyatlar gibi
+                tedavileri kapsar. <br> <br>
+                <strong>Poliklinik Ziyaretleri:</strong> <br>Doktor muayeneleri, testler, tahliller gibi poliklinik ziyaretleri sigorta
+                kapsamında olabilir. <br><br>
+                <strong>Acil Müdahaleler: </strong><br>Ani sağlık sorunları veya kazalar sonucu gereken acil tedaviler için sigorta
+                genellikle geçerlidir. <br><br>
+                <strong>Kapsama Göre Farklılık:</strong> <br> Poliçe kapsamına bağlı olarak, bazı özel sağlık sigortaları ilave hizmetler
+                sunabilir; örneğin, diş tedavileri, göz muayeneleri veya alternatif tıp gibi. <br><br>
+
+                <strong>Prim ve Kapsam Belirleme:</strong> <br>
+                Primler, sigorta şirketinin belirlediği faktörlere göre değişir. Sigortalının yaşına, sağlık geçmişine,
+                seçilen kapsama ve ayrıcalıklara göre primler belirlenir.
+                Sigorta kapsamı, poliçede belirtilen şartlara ve seçeneklere göre farklılık gösterir. Bazı durumlar veya
+                tedaviler kapsam dışında olabilir. <br><br>
+
+                <strong>Sigorta Süreci:</strong> <br>
+                Başvuru, değerlendirme, poliçe seçimi, ödeme ve poliçenin
+                aktif hale gelmesi.
+                Hasar durumunda, sigortalı kişi poliçede belirtilen prosedürleri izleyerek sağlık masraflarını sigorta
+                şirketine bildirir. Sigorta şirketi, talebi değerlendirir ve kapsam dahilinde olan masrafları karşılar. <br>
+                
+                <strong>Önemli Noktalar:</strong>  <br>
+                Özel sağlık sigortası, acil durumlar ve beklenmedik sağlık sorunlarına karşı koruma sağlar. Ancak her
+                poliçe farklılık gösterir.
+                Sigorta şirketleri, hastalıkların ön belirtileri veya mevcut sağlık koşullarını dikkate alarak poliçe
+                kapsamını belirleyebilir veya belli hastalıkları kapsam dışında tutabilir.
+            </p>
+        </div>
+    </div>
+</body>
+<footer style="background-color: #343a40; color: white; text-align: center; padding: 20px;">
+    <section style="display: flex; justify-content: center;">
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+    </section>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-12">
+            <h5 class="text-uppercase">Bize Ulaşın</h5>
+            <ul style="list-style: none; padding: 0; text-align: center;">
+                <li style="margin-bottom: 10px;"><a href="hakkımızda.html"
+                        style="color: white; text-decoration: none;">Hakkımızda</a></li>
+                <li style="margin-bottom: 10px;"><a href="hizmetlerimiz.html"
+                        style="color: white; text-decoration: none;">Hizmetlerimiz</a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="background-color: rgba(0, 0, 0, 0.2); padding: 10px;">
+        <p>Copyright &copy;2023; Designed by <span style="font-weight: bold;">Vera Sigorta</span> </p>
+    </div>
+</footer>
+</html>

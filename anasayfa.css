@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 60px;
+    /* Header yüksekliği kadar bir padding ekle */
+}
+
+.navbar {
+    height: 10vh;
+    width: 100%;
+    background-color: #222222;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.fixed {
+    position: fixed;
+    /* Sabit konumda tut */
+    top: 0;
+    /* Sayfanın üst kısmına yerleştir */
+    width: 100%;
+    /* Genişliği sayfanın tamamına yay */
+    z-index: 1000;
+    /* Diğer içeriğin üstünde gözüksün */
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+    transition: 0.8s;
+}
+
+h2 {
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+a:hover {
+    color: #06152f;
+}
+
+h2:hover {
+    color: #06152f;
+}
+
+/* Form stilleri */
+.form-inline {
+    display: flex;
+    align-items: center;
+}
+
+/* Arama kutusu */
+.form-control {
+    border-radius: 0px;
+    /* Kutu şekli */
+    border-color: #cccccc;
+    /* Çerçeve rengi */
+}
+
+/* Arama butonu */
+.btn-outline-success {
+    border-color: white;
+    /* Dış çizgili buton rengi */
+    color: black;
+    /* Buton metin rengi */
+    border-radius: 0px;
+    /* Buton şekli */
+    margin-left: 6px;
+    /* Buton ile kutu arasındaki boşluk */
+}
+
+.btn-outline-success:hover {
+    background-color: #06152f;
+    /* Buton üzerine gelindiğindeki renk */
+    color: white;
+    /* Buton üzerine gelindiğindeki metin rengi */
+    transition: 0.8s;
+}
+
+.iterative-functions {
+    position: fixed;
+
+    width: 25%;
+}
+
+/* Kartın genişliği */
+.custom-card {
+    width: 80%;
+}
+
+.col-md-4 {
+    text-align: right;
+    width: 20%;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.bg-dark {
+    width: 59%;
+}

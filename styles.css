@@ -1,0 +1,158 @@
+body {
+    /* (1-19)Sayfanın metinlerini yatayda ortalar, belirli bir yazı tipi (Arial veya sans-serif) kullanır, arka planı iki renk tonu arasında bir dairesel geçişle doldurur 
+    ve sayfanın taşan içeriğini gizler. Bu kod sayfanın genel düzenini ve görünümünü tanımlar, böylece kullanıcılar için daha estetik ve kullanışlı bir deneyim sağlar.*/
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: rgb(39, 38, 38);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.custom-header {
+    color: white;
+    font-size: 2.5em;
+    margin-top: 2em;
+}
+
+.custom-subheader {
+    color:white;
+    margin-bottom: 2em;
+}
+
+form {
+    /* (20-36)Form, bir kenarlık (border) ile çevrelenir ve arka planı beyaz olarak ayarlanır. Ayrıca, formun köşelerine yuvarlak kenarlar (border-radius) ekler, 
+    böylece daha estetik bir görünüm kazanır. Formun genişliği 300 piksel olarak sınırlanır ve sayfa ortasına hizalanır. Ayrıca, her bir form öğesi arasına 
+    15 piksellik bir boşluk bırakılır, böylece formun içeriği düzenli bir şekilde görüntülenir. Bu stil özellikleri, formun daha kullanıcı dostu ve estetik
+     bir görünüme sahip olmasını sağlar.*/
+    display: inline-block;
+    text-align: left;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    background: white;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+form input {
+    /*(37-63)Input alanlarına, genişlik, kenarlık, doldurma, köşe yuvarlama ve boşluk gibi özellikler kazandırır. 
+    Form öğeleri arasına belirli bir boşluk ekler ve formun başlangıcına bir başlangıç boşluğu koyar. 
+    Ayrıca, "Kayıt Ol" düğmesinin stilini belirler, düğme genişliğini, arka plan rengini, metin rengini, doldurma miktarını, kenarlığı ve köşe yuvarlamayı tanımlar. 
+    Bu stil özellikleri, formun daha düzenli ve kullanıcı dostu görünmesini sağlar ve "Kayıt Ol" düğmesini vurgular.*/
+    width: 275px;
+    padding: 10px;
+    border: 1px solid rgb(156, 106, 106)1d1;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    /* Input alanları arasındaki boşluğu ayarlar */
+    margin-top: 15px;
+    /* Input alanlarının başlangıcındaki boşluğu ayarlar */
+}
+
+/* Boşluk eklemek için yeni stil tanımı */
+.space {
+    height: 2em;
+    /* Sayfanın en başından formun başladığı yere kadar olan boşluğu ayarlar */
+}
+
+/* Kayıt Ol butonunun stilini ekleyin */
+form button {
+    text-align: center;
+    display: block;
+    width: 100%;
+    background: rgb(39, 38, 38);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.social-icons {
+    /*(65-108)sosyal medya ikonlarını ve bir pop-up veya modal penceresini stilize eder. .social-icons sınıfı, 
+    sosyal medya ikonlarını ortalar ve ikonlar arasında belirli bir boşluk bırakır. .popup sınıfı, bir pop-up penceresi veya modal penceresinin stilini tanımlar
+     ve bu pencerenin sayfanın üstünden başlayarak tam ekran boyutuna kadar kaplanmasını sağlar. .popup-content sınıfı, pop-up penceresinin içeriğini ortalar
+      ve belirli bir arka plan rengi ve köşe yuvarlama ile stilize eder. Son olarak, .close sınıfı, pop-up penceresini kapatmak için bir kapatma düğmesi stilini belirler.
+       Bu stil özellikleri, sosyal medya ikonlarını düzenler ve pop-up penceresinin görünümünü ayarlar, böylece kullanıcılar arasında paylaşım veya ek bilgi sunmak için kullanılabilir.*/
+    text-align: center;
+    /* Ortala ikonları */
+    margin: 25px 0;
+    /* Üstten ve alttan 25px boşluk bırak */
+}
+
+.social-icons a {
+    display: inline-block;
+    /* Bağlantıları yan yana sırala */
+    margin: 0 10px;
+    /* Bağlantılar arasında 10px boşluk bırak (isteğe bağlı) */
+}
+
+.social-icons img {
+    width: 32px;
+    /* İkonların genişliğini 32 piksel yap */
+    height: 32px;
+    /* İkonların yüksekliğini 32 piksel yap */
+}
+
+/* Pop-up veya modal stilleri */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.close {
+    /*pop-up kapanış*/
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Etiketin metni */
+label {
+    /*(111-1)bir web sayfasında etiketlerin ve öğelerin stilini belirler. Örneğin, etiketlerin metin rengini, boyutunu ve hizalama özelliklerini tanımlar. 
+    Ayrıca, checkbox öğeleri ile metin arasındaki boşluğu ayarlar. Aynı şekilde, "social-icons" sınıfı, sosyal medya ikonlarının stilini belirler 
+    ve bu ikonları yatayda ortalar, aralarına belirli bir boşluk ekler. Pop-up veya modal pencere stilleri, bir pop-up penceresini veya modal penceresini stilize eder. 
+    Pop-up penceresinin arka plan rengini, konumunu, içeriğini ve kapatma düğmesinin stilini tanımlar. 
+    Bu stil özellikleri, web sayfasının görünümünü düzenler ve kullanıcı deneyimini iyileştirmek için kullanılır.*/
+    color: #333;/* Metin rengi */
+    font-size: 16px;/* Metin boyutu */
+    display: flex; /* İçeriği yatay hizalar */
+    align-items: center;/* İçeriği dikeyde ortalar */
+    display: flex;
+    justify-content: flex-end;/* Metni sağa çeker */
+    align-items: center;/* İçeriği dikeyde ortalar */
+}
+
+/* Checkbox öğesi */
+input[type="checkbox"] {
+    margin: -130px;
+    /* Checkbox ile metin arasındaki boşluk */
+}
+
